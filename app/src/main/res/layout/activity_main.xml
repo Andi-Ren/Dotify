@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="75dp"
+        android:layout_height="18dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/btnChangeUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnChangeUser" />
+
+    <Button
+        android:id="@+id/btnChangeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSongCover"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/black"
+        android:contentDescription="This is the song cover image"
+        android:src="@drawable/cover_art"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brCoverImageBinding"
+        tools:layout_editor_absoluteY="133dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/brCoverImageBinding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvUserName, btnChangeUser"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <TextView
+        android:id="@+id/tvSongName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Song Name"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/ivSongCover" />
+
+    <TextView
+        android:id="@+id/tvArtistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artist name"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSongName" />
+
+    <TextView
+        android:id="@+id/tvPlayCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10304034 plays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvArtistName" />
+
+    <ImageButton
+        android:id="@+id/btnPlayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toStartOf="@+id/btnNextButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnPrevButton"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayCount"
+        app:srcCompat="@drawable/play_button" />
+
+    <ImageButton
+        android:id="@+id/btnNextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnPlayButton"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayCount"
+        app:srcCompat="@drawable/next_button" />
+
+    <ImageButton
+        android:id="@+id/btnPrevButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlayButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayCount"
+        app:srcCompat="@drawable/prev_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
