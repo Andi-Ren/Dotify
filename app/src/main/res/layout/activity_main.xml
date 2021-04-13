@@ -10,8 +10,10 @@
     <TextView
         android:id="@+id/tvUserName"
         android:layout_width="75dp"
-        android:layout_height="18dp"
-        android:text="TextView"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Guest User"
         app:layout_constraintBottom_toBottomOf="@+id/btnChangeUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnChangeUser" />
@@ -20,7 +22,7 @@
         android:id="@+id/btnChangeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Change User"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +33,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/black"
         android:contentDescription="This is the song cover image"
-        android:src="@drawable/cover_art"
+        android:src="@drawable/starboy_cover"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Song Name"
+        android:text="Starboy"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +65,9 @@
         android:id="@+id/tvArtistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Artist name"
+        android:text="The Weekend Featuring Daft Punk"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,41 +77,73 @@
         android:id="@+id/tvPlayCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10304034 plays"
+        android:text="# plays"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvArtistName" />
 
     <ImageButton
         android:id="@+id/btnPlayButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
+        android:layout_width="88dp"
+        android:layout_height="83dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnNextButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnPrevButton"
         app:layout_constraintTop_toBottomOf="@+id/tvPlayCount"
+        app:layout_constraintVertical_bias="0.516"
         app:srcCompat="@drawable/play_button" />
 
     <ImageButton
         android:id="@+id/btnNextButton"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPlayButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnPlayButton"
-        app:layout_constraintTop_toBottomOf="@+id/tvPlayCount"
+        app:layout_constraintTop_toTopOf="@+id/btnPlayButton"
         app:srcCompat="@drawable/next_button" />
 
     <ImageButton
         android:id="@+id/btnPrevButton"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPlayButton"
         app:layout_constraintEnd_toStartOf="@+id/btnPlayButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPlayCount"
+        app:layout_constraintTop_toTopOf="@+id/btnPlayButton"
         app:srcCompat="@drawable/prev_button" />
 
+    <EditText
+        android:id="@+id/ptUserNameEdit"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:ems="30"
+        android:inputType="textPersonName"
+        android:text="Guest User"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnChangeUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnChangeUser"
+        app:layout_constraintVertical_bias="0.0" />
 
+
+    <![CDATA[
+
+    />
+
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
