@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Dotify</string>
+    <string name="change_user_button">Change User</string>
+    <string name="default_username">Guest</string>
+    <string name="song_img_desc">Song cover image</string>
+    <string name="song_name">Song Name</string>
+    <string name="artists">Artists</string>
+    <string name="play_count"># plays</string>
+    <string name="next_button_desc">Next button</string>
+    <string name="play_button_desc">Play button</string>
+    <string name="prev_button_desc">Previous Button</string>
+    <string name="auto_fill_hints">New Username</string>
 </resources>
