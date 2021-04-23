@@ -1,15 +1,17 @@
 package edu.uw.andir2.dotify
 
 import android.graphics.Color
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import kotlin.random.Random
+import com.ericchee.songdataprovider.Song
 
+fun navigateToPlayerActivity(song: Song) {
+}
 
-class MainActivity : AppCompatActivity() {
+class PlayerActivity : AppCompatActivity() {
     private var randomNumber = Random.nextInt(100000, 10000000)
     private var playCountEnd = " plays"
 
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_player)
 
         ivSongCover = findViewById(R.id.ivSongCover)
 

@@ -10,4 +10,6 @@
     <string name="play_button_desc">Play button</string>
     <string name="prev_button_desc">Previous Button</string>
     <string name="auto_fill_hints">New Username</string>
+    <string name= "song_summary">%s - %s</string>
+    <string name= "delete_song_message">Deleted %s</string>
 </resources>
