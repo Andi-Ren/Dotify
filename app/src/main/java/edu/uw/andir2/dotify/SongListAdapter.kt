@@ -21,7 +21,7 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
     override fun getItemCount(): Int = listOfSongs.size
 
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
-        var song: Song = listOfSongs[position]
+        val song: Song = listOfSongs[position]
         with(holder.binding) {
             tvSongNameList.text = song.title
             tvArtistNameList.text = song.artist
@@ -44,7 +44,7 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
         this.listOfSongs = newListOfSongs
     }
 
-    fun deleteSongs(song: Song) {
+    fun deleteSongs(song: Song): List<Song> {
         val deletedListOfSongs = listOfSongs.toMutableList().apply { removeAt(listOfSongs.indexOf(song)) }
 
         val callback = SongsDiffCallback(deletedListOfSongs, listOfSongs)
@@ -52,6 +52,7 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
         result.dispatchUpdatesTo(this)
 
         this.listOfSongs = deletedListOfSongs
+        return deletedListOfSongs
     }
 
     class SongViewHolder(val binding: ItemSongBinding): RecyclerView.ViewHolder(binding.root)

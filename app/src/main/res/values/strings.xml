@@ -5,7 +5,7 @@
     <string name="song_img_desc">Song cover image</string>
     <string name="song_name">Song Name</string>
     <string name="artists">Artists</string>
-    <string name="play_count"># plays</string>
+    <string name="play_count">%d # plays</string>
     <string name="next_button_desc">Next button</string>
     <string name="play_button_desc">Play button</string>
     <string name="prev_button_desc">Previous Button</string>

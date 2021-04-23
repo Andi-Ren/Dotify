@@ -7,25 +7,6 @@
     android:padding="@dimen/overall_padding"
     tools:context=".PlayerActivity">
 
-    <TextView
-        android:id="@+id/tvUserName"
-        android:layout_width="75dp"
-        android:layout_height="40dp"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:text="@string/default_username"
-        app:layout_constraintBottom_toBottomOf="@+id/btnChangeUser"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnChangeUser" />
-
-    <Button
-        android:id="@+id/btnChangeUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/change_user_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/ivSongCover"
         android:layout_width="0dp"
@@ -37,17 +18,8 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/brCoverImageBinding"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteY="133dp" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/brCoverImageBinding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="tvUserName, btnChangeUser"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="144dp" />
 
     <TextView
         android:id="@+id/tvSongName"
@@ -128,19 +100,5 @@
         app:layout_constraintTop_toTopOf="@+id/btnPlayButton"
         app:srcCompat="@drawable/prev_button" />
 
-    <EditText
-        android:id="@+id/ptUserNameEdit"
-        android:hint="@string/auto_fill_hints"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:ems="30"
-        android:inputType="textPersonName"
-        android:textSize="@dimen/small_font"
-        app:layout_constraintBottom_toBottomOf="@+id/btnChangeUser"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnChangeUser"
-        app:layout_constraintVertical_bias="0.0"
-        android:autofillHints="@string/auto_fill_hints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
