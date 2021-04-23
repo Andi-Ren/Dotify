@@ -1,4 +1,4 @@
-Dotify Andi Ren
+Dotify\n Andi Ren \n
 This is a Spotify clone app for android 6.0
 
 Extra Credit
