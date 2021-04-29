@@ -14,8 +14,8 @@ class SongListAdapter(private var listOfSongs: List<Song>): RecyclerView.Adapter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
         val binding = ItemSongBinding.inflate(LayoutInflater.from(parent.context))
-
         return SongViewHolder(binding)
+
     }
 
     override fun getItemCount(): Int = listOfSongs.size

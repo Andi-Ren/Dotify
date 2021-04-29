@@ -65,6 +65,18 @@ class PlayerActivity : AppCompatActivity() {
             btnPrevButton.setOnClickListener {
                 Toast.makeText(this@PlayerActivity, "Skipping to previous track", Toast.LENGTH_SHORT).show()
             }
+
+            btnSettings.setOnClickListener {
+                if (song != null) {
+                    navigateToSettingsActivity(this@PlayerActivity, song)
+                }
+            }
+
+            btnBack.setOnClickListener {
+                if (song != null) {
+                    navigateToSongListActivity(this@PlayerActivity, song)
+                }
+            }
         }
     }
 
