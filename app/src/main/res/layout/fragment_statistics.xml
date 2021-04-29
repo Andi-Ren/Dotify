@@ -6,18 +6,8 @@
     android:layout_height="match_parent"
     android:padding="@dimen/overall_padding">
 
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-
-        android:background="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivSongCover"
         android:layout_width="0dp"
         android:layout_height="150dp"
 
@@ -27,12 +17,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvSongName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Song Has been played 2 times"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        android:layout_marginStart="24dp"
+        android:text="Song"
+        app:layout_constraintStart_toEndOf="@+id/ivSongCover"
+        app:layout_constraintBottom_toTopOf="@id/tvSongCount"
+        app:layout_constraintTop_toTopOf="@+id/ivSongCover" />
+
+    <TextView
+        android:id="@+id/tvSongCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Count"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSongCover"
+        app:layout_constraintStart_toStartOf="@+id/tvSongName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSongName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

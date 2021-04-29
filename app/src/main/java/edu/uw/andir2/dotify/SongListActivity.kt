@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
@@ -26,39 +27,48 @@ fun navigateToSongListActivity(context: Context, song: Song) {
 class SongListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySongListBinding
-    private lateinit var currentSong: Song
+    private var currentSong: Song? = null
     private lateinit var songs: List<Song>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val launchIntent = intent
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_song_list)
+
+        val launchIntent = intent
+        val playerSong: Song? = launchIntent.extras?.getParcelable(SONG_KEY)
+
         supportActionBar?.title = "All Songs"
         binding = ActivitySongListBinding.inflate(layoutInflater).apply { setContentView(root) }
         songs = SongDataProvider.getAllSongs()
-        currentSong = launchIntent.extras?.getParcelable(SONG_KEY) ?: songs[0]
 
 
         with(binding) {
             val adapter = SongListAdapter(songs)
-            //tvSongSummary.visibility = View.GONE
+
             rvSongs.adapter = adapter
 
-            tvSongSummary.text = root.context.getString(R.string.song_summary, currentSong.title, currentSong.artist)
+            currentSong = if (savedInstanceState != null) {
+                savedInstanceState.getParcelable(SONG_KEY)
+            } else {
+                playerSong
+            }
+
+            if (currentSong == null) {
+                tvSongSummary.visibility = View.GONE
+            } else {
+                tvSongSummary.text = root.context.getString(R.string.song_summary, currentSong?.title, currentSong?.artist)
+                tvSongSummary.visibility = View.VISIBLE
+            }
 
             adapter.onSongClickListener = { _, song ->
-                tvSongSummary.visibility = View.VISIBLE
                 tvSongSummary.text = root.context.getString(R.string.song_summary, song.title, song.artist)
+                tvSongSummary.visibility = View.VISIBLE
                 currentSong = song
             }
 
             adapter.onSongLongClickListener = {song ->
                 val deletedSongs: List<Song> = adapter.deleteSongs(song)
                 Toast.makeText(this@SongListActivity, root.context.getString(R.string.delete_song_message, song.title), Toast.LENGTH_SHORT).show()
-                if (song == currentSong) {
-                    tvSongSummary.visibility = View.GONE
-                }
                 songs = deletedSongs
             }
 
@@ -66,9 +76,21 @@ class SongListActivity : AppCompatActivity() {
                 adapter.shuffleSongs(songs.toMutableList().shuffled())
             }
 
+
             tvSongSummary.setOnClickListener {
-                navigateToPlayerActivity(this@SongListActivity, currentSong)
+                navigateToPlayerActivity(this@SongListActivity, currentSong!!)
             }
+
+
         }
+
+
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        // Save data
+        outState.putParcelable(SONG_KEY, currentSong)
+        super.onSaveInstanceState(outState)
+    }
+
 }

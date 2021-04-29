@@ -25,9 +25,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
-        <action
-            android:id="@+id/action_settingsFragment_to_statisticsFragment"
-            app:destination="@id/statisticsFragment" />
+        <argument
+            android:name="count"
+            app:argType="edu.uw.andir2.dotify.SongCount" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
@@ -46,5 +46,11 @@
         <action
             android:id="@+id/action_statisticsFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <argument
+            android:name="count"
+            app:argType="edu.uw.andir2.dotify.SongCount" />
     </fragment>
+    <action
+        android:id="@+id/action_global_statisticsFragment2"
+        app:destination="@id/statisticsFragment" />
 </navigation>

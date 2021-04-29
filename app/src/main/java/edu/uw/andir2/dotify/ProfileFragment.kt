@@ -16,12 +16,6 @@ class ProfileFragment : Fragment() {
     {
         val binding = FragmentProfileBinding.inflate(inflater)
 
-        with(binding) {
-            btnBack.setOnClickListener {
-                navController.navigate(R.id.settingsFragment)
-            }
-        }
-
         return binding.root
     }
 }

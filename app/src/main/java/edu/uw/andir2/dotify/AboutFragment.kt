@@ -17,10 +17,6 @@ class AboutFragment : Fragment() {
         val binding = FragmentAboutBinding.inflate(inflater)
         val versionNum = BuildConfig.VERSION_NAME
         with(binding) {
-            btnBack.setOnClickListener {
-                navController.navigate(R.id.settingsFragment)
-            }
-
             tvVersion.text = "Version: $versionNum"
         }
 
