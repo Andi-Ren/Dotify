@@ -40,8 +40,8 @@ class SongNotificationManager(
         // build information to show
         var builder = NotificationCompat.Builder(context, NEW_SONG_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_song)
-            .setContentTitle("New Song from " + song.artist)
-            .setContentText(song.title)
+            .setContentTitle(song.artist + "just released a new song!!!")
+            .setContentText("Listen to " + song.title + " now on Dotify")
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
