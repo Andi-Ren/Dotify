@@ -16,6 +16,10 @@ class SettingsFragment : Fragment() {
 
     private val safeArgs: SettingsFragmentArgs by navArgs()
 
+    private val dotifyApp by lazy {requireActivity().application as DotifyApplication}
+    private val songManager by lazy {dotifyApp.SongManager}
+    private val songNotificationManager by lazy {dotifyApp.SongNotificationManager}
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         val binding = FragmentSettingsBinding.inflate(inflater)
@@ -34,6 +38,19 @@ class SettingsFragment : Fragment() {
             btnProfileStat.setOnClickListener {
                 //navController.navigate(edu.uw.andir2.dotify.R.id.statisticsFragment)
                 navController.navigate(NavGraphDirections.actionGlobalStatisticsFragment2(songCount))
+            }
+
+            swManager.setOnCheckedChangeListener { _, isChecked ->
+                //swManager.text = if (isChecked) "Switch2:ON" else "Switch2:OFF"
+                if (isChecked) {
+                    songManager.syncSongs()
+                } else {
+                    songManager.stopPeriodicRefresh()
+                }
+            }
+
+            btnNotify.setOnClickListener {
+                songNotificationManager.publishNewSongNotification()
             }
         }
 

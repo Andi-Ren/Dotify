@@ -31,4 +31,22 @@
         android:text="About"
         app:layout_constraintStart_toStartOf="@+id/btnProfileStat"
         app:layout_constraintTop_toBottomOf="@+id/btnProfileStat" />
+
+    <Switch
+        android:id="@+id/swManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Notification"
+        app:layout_constraintStart_toStartOf="@+id/btnAbout"
+        app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
+
+    <Button
+        android:id="@+id/btnNotify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Notify"
+        app:layout_constraintStart_toStartOf="@+id/swManager"
+        app:layout_constraintTop_toBottomOf="@+id/swManager" />
 </androidx.constraintlayout.widget.ConstraintLayout>

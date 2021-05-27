@@ -14,4 +14,6 @@
     <string name="song_summary">%s - %s</string>
     <string name="delete_song_message">Deleted %s</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_songs_channel_description">This is a channel for notifying you of new songs</string>
+    <string name="new_songs">New Songs</string>
 </resources>

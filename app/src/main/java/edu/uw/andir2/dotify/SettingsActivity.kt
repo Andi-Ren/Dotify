@@ -4,15 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Toast
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.navArgs
-import androidx.navigation.navArgs
-import com.ericchee.songdataprovider.Song
 import edu.uw.andir2.dotify.databinding.ActivitySettingsBinding
-import kotlinx.coroutines.withContext
 
 private const val SONG_COUNT_KEY = "count"
 
@@ -25,6 +18,8 @@ fun navigateToSettingsActivity(context: Context, songCount: SongCount) = with(co
 class SettingsActivity : AppCompatActivity() {
 
     //private val safeArgs: StatisticsFragmentArgs by navArgs()
+
+
 
     private lateinit var binding: ActivitySettingsBinding
 
